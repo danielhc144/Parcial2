@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<zone>
+  <short>DMZ</short>
+  <description>For computers in your demilitarized zone that are publicly-accessible with limited access to your internal network. Only selected incoming connections are accepted.</description>
+  <service name="ssh"/>
+  <service name="http"/>
+  <service name="https"/>
+  <service name="ftp"/>
+  <port port="443" protocol="tcp"/>
+  <port port="21" protocol="tcp"/>
+  <port port="10000-10100" protocol="tcp"/>
+  <port port="53" protocol="tcp"/>
+  <port port="853" protocol="tcp"/>
+  <port port="53" protocol="udp"/>
+  <port port="853" protocol="udp"/>
+  <port port="20" protocol="tcp"/>
+  <port port="40000-50000" protocol="tcp"/>
+  <port port="990" protocol="tcp"/>
+  <port port="30000-39999" protocol="tcp"/>
+  <masquerade/>
+  <forward-port port="443" protocol="tcp" to-port="443" to-addr="192.168.100.4"/>
+  <forward-port port="21" protocol="tcp" to-port="21" to-addr="192.168.100.4"/>
+  <forward-port port="10000-10100" protocol="tcp" to-port="10000-10100" to-addr="192.168.100.4"/>
+  <forward-port port="20" protocol="tcp" to-port="20" to-addr="192.168.100.4"/>
+  <rule family="ipv4">
+    <source address="192.168.0.0/24"/>
+    <port port="53" protocol="udp"/>
+    <accept/>
+  </rule>
+</zone>
