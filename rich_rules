@@ -1,0 +1,7 @@
+sudo firewall-cmd --add-rich-rule='rule protocol value="icmp" drop'
+
+
+firewall-cmd --permanent --zone=dmz --add-rich-rule='rule family="ipv4" port="80" protocol="tcp" drop'
+firewall-cmd --permanent --zone=dmz --remove-rich-rule='rule family="ipv4" port port="80" protocol="tcp" drop'
+firewall-cmd --reload
+service firewalld restart
