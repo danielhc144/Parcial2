@@ -9,14 +9,7 @@
   <port port="443" protocol="tcp"/>
   <port port="21" protocol="tcp"/>
   <port port="10000-10100" protocol="tcp"/>
-  <port port="53" protocol="tcp"/>
-  <port port="853" protocol="tcp"/>
-  <port port="53" protocol="udp"/>
-  <port port="853" protocol="udp"/>
   <port port="20" protocol="tcp"/>
-  <port port="40000-50000" protocol="tcp"/>
-  <port port="990" protocol="tcp"/>
-  <port port="30000-39999" protocol="tcp"/>
   <masquerade/>
   <forward-port port="443" protocol="tcp" to-port="443" to-addr="192.168.100.4"/>
   <forward-port port="21" protocol="tcp" to-port="21" to-addr="192.168.100.4"/>
